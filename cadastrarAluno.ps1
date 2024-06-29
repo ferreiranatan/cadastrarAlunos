@@ -23,7 +23,7 @@ foreach($user in $users) {
     if (-not (Get-ADUser -Filter {SamAccountName -eq $userName})) {
         # Cria um novo usuário
         New-ADUser -Name ($user.Nome) -SamAccountName ($userName) `
-                   -UserPrincipalName ($userName + "@digitalcollegesul.local") ` # Define o UPN
+                   -UserPrincipalName ($userName + "@digitalcollegesul.local") `
                    -NewPassword (ConvertTo-SecureString -AsPlainText $user.CPF -Force) `
                    -Path $targetOU -Enabled $true
         Write-Host "Usuário $userName criado com sucesso."

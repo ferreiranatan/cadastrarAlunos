@@ -1,7 +1,7 @@
 # Caminho para o arquivo CSV original
-$csvPath = ""
+$csvPath = "C:\Users\natanael.ferreira\Desktop\script_cadastro\md10.csv"
 # Caminho para o novo arquivo CSV formatado
-$newCsvPath = ""
+$newCsvPath = "C:\Users\natanael.ferreira\Desktop\script_cadastro\md10_formatted.csv"
 
 # Ler o conteúdo do arquivo CSV
 $content = Get-Content $csvPath
