@@ -1,17 +1,15 @@
 # Caminho para o arquivo CSV
-$csvPath = "C:\Users\natanael.ferreira\Desktop\script_cadastro\list\gt01.csv"
+$csvPath = "C:\Users\natanael.ferreira\Desktop\script_cadastro\csv\gt01.csv"
 
 
 # Importa os dados do CSV
 $users = Import-Csv $csvPath
 
-# HashSet para rastrear nomes de usuário únicos
-$userNames = New-Object System.Collections.Generic.HashSet[System.String]
 
 foreach($user in $users){
     #Pega nome completo
     $nomeCompleto = $user.nome
-    # Pega o primeiro nome (assumindo que os nomes são separados por espaço)
+    # Pega o primeiro nome a partir do primeiro espaço
     $firstName = ($user.nome -split ' ')[0]
 
     # Remove pontos e hífen do CPF
