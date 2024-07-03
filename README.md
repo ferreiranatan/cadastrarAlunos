@@ -32,7 +32,7 @@ O script define a unidade organizacional (OU) onde os usuários serão criados. 
 
 ## Como Executar
 
- É necessario rodar o script *DENTRO do servidor
+ É necessario rodar o script DENTRO do servidor
 
  - Abra o PowerShell como Administrador
  - Cole o Script e aperte enter ou acesse o local do arquivo com a extensão ".ps1" e execute com o enter 
