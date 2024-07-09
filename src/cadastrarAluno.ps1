@@ -3,6 +3,7 @@ Import-Module ActiveDirectory
 
 # Caminho do arquivo CSV
 $csvPath = "..\csv\da12.csv"
+
 $users = Import-Csv $csvPath
 
 # Unidade Organizacional alvo, dependendo da unidade alterar o valor do valor de $targetOU
@@ -10,7 +11,6 @@ $targetOU = "OU=Alunos,DC=digitalcollegesul,DC=local"
 
 # Loop para acessar cada usuário no CSV
 foreach($user in $users) {
-    
     # Nome completo do usuário
     $nomeCompleto = $user.nome
     # Primeiro nome do usuário
@@ -35,5 +35,6 @@ foreach($user in $users) {
         $securePassword = ConvertTo-SecureString -AsPlainText $cpfSemPonto -Force
         Set-ADAccountPassword -Identity $userName -AccountPassword $securePassword -Reset
         Write-Host "Usuario $nomeCompleto já existe, a senha foi atualizada."
-    }
+       
+}
 }
