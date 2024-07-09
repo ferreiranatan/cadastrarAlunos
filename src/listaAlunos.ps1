@@ -1,5 +1,5 @@
 # Caminho para o arquivo CSV
-$csvPath = "C:\Users\natanael.ferreira\Desktop\script_cadastro\csv\gt01.csv"
+$csvPath = "C:\Users\natanael.ferreira\Desktop\script_cadastro\csv\da12.csv"
 
 
 # Importa os dados do CSV
@@ -16,14 +16,10 @@ foreach($user in $users){
     $cpfSemFormatacao = $user.cpf -replace '\.|-', ''
     
     # Pega os primeiros quatro caracteres do CPF
-    $cpfUser = $cpfSemFormatacao.Substring(0, 4)
+    $cpfUser = $cpfSemFormatacao.Substring(0,4)
     
     # Concatena o primeiro nome com os primeiros quatro caracteres do CPF
     $userName = $firstName + $cpfUser
     
-    # Tenta adicionar o nome de usuário ao HashSet
-    if ($userNames.Add($userName)) {
-        # Se for adicionado com sucesso, imprime ou usa o $userName conforme necessário
-        Write-Output $nomeCompleto $userName $cpfSemFormatacao $user
-    }
+    Write-Output $nomeCompleto $userName $cpfSemFormatacao $user
 }
